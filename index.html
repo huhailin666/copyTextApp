@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>复制应用</title>
+  <style>
+    #edit {
+      border: red 1px solid;
+      border-radius: 5px;
+      height: 200px;
+      overflow: scroll;
+    }
+
+    #output {
+      border: red 1px solid;
+      border-radius: 5px;
+      height: 300px;
+      overflow: scroll;
+    }
+
+    #container {
+      width: 80%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div>输入：</div>
+    <div contenteditable="true" id="edit"></div>
+    <div>输出：</div>
+    <div id="output"></div>
+    <script>
+
+      window.onkeyup = function (event) {
+        if (event.keyCode == 13) {
+          var a = edit.innerText.replace(/\s/g, '')
+          console.log(a)
+          output.innerText = a
+        }
+      }
+    </script>
+</body>
+
+</html>
